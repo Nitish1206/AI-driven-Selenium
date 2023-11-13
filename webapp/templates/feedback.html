@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <div class="container">
+        <h2>Feedback Form</h2>
+        <form id="feedbackForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="12" required style="width: 439px; height: 191px;"></textarea><br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        // JavaScript for handling form submission
+        const form = document.getElementById("feedbackForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // You can add code here to send the feedback data to a server or perform other actions.
+            
+            // For this example, we'll simply show an alert:
+            alert("Thank you for your feedback!");
+
+            window.location.href = "/";
+            
+            // You can redirect the user to another page or perform further actions here.
+        });
+    </script>
+</body>
+</html>
