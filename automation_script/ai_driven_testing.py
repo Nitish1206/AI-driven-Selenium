@@ -2,9 +2,6 @@ import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.preprocessing import LabelEncoder
 import pickle
 import os
 import chromedriver_autoinstaller
