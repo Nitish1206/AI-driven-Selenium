@@ -14,15 +14,9 @@ import os
 from selenium.webdriver.support.ui import Select
 
 class AutomateTesting:
-    def __init__(self,name="demo",address="demo",phonenumber="000000000",dob="1/1/2000",gender="Male",fathername="demo",):
+    def __init__(self,name="demo",address="demo",phonenumber="000000000",dob="1/1/2000",gender="Male",fathername="demo",mothername="demo"):
 
-        """init method is used to intialise class attributes 
-        Args:
-            search_jobtitle (String): Give job title which you want to search on naukri.com
-            search_experience (int, optional): Filter for number of years of experience which you want search. Defaults to 0.
-            search_location (str, optional): Filter for location of job. Defaults to "Pune".
-            Disable_search_filter (Bool, optional): False will enable filter search. Defaults to "True".
-        """
+        """init method is used to intialise class attributes """
         
         # set chrome paramters and initialise url to search for scrapping
         self.set_chrome_parameter()
@@ -36,6 +30,7 @@ class AutomateTesting:
         self.dob = dob
         self.gender = gender
         self.fathername=fathername
+        self.mothername=mothername
         
 
         print("wait for page to load....")
@@ -69,36 +64,34 @@ class AutomateTesting:
 
     
     def updapte_input_field(self):
+
         # Fill in the Name field
-        # name_input = self.driver.find_element(By.NAME, "name")
-        att=[By.NAME, "name"]
-        name_input = self.driver.find_element(att[0],att[1])
-        print("===>>>",name_input.get_attribute('outerHTML'))
-        name_input.send_keys("Nitish")
+        name_input = self.driver.find_element(By.NAME,"name")
+        name_input.send_keys(self.name)
 
         # Fill in the Address field
         address_input = self.driver.find_element(By.ID, "address")
-        address_input.send_keys("Your Address")
+        address_input.send_keys(self.address)
 
         # Fill in the Phone Number field
         phone_number_input = self.driver.find_element(By.ID, "phone-number")
-        phone_number_input.send_keys("Your Phone Number")
+        phone_number_input.send_keys(self.phonenumber)
 
         # Fill in the Date of Birth field
         dob_input = self.driver.find_element(By.ID, "dob")
-        dob_input.send_keys("06/12/1998")
+        dob_input.send_keys(self.dob)
 
         # Select gender from dropdown
         gender_input = Select(self.driver.find_element(By.ID, "gender"))
-        gender_input.select_by_value("Male")  # Replace with the desired gender value
+        gender_input.select_by_value(self.gender)  # Replace with the desired gender value
 
         # Fill in the Father's Name field
         father_name_input = self.driver.find_element(By.ID, "father-name")
-        father_name_input.send_keys("Father's Name")
+        father_name_input.send_keys(self.fathername)
 
         # Fill in the Mother's Name field
         mother_name_input = self.driver.find_element(By.ID, "mother-name")
-        mother_name_input.send_keys("Mother's Name")
+        mother_name_input.send_keys(self.mothername)
 
         # Click the Submit button
         submit_button = self.driver.find_element(By.CSS_SELECTOR, "input[type='submit']")
