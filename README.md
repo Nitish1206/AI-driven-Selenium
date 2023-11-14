@@ -1,4 +1,4 @@
-# Automation_testing_recommendation
+# AI Driven Automation Testing
 
 <p class="has-line-data" data-line-start="0" data-line-end="1">This repository contains a Python script for a self-healing automation system using AI-driven testing. The script utilizes Selenium for web automation, BeautifulSoup for HTML parsing, and similarity matrix. The self-healing aspect is achieved through the prediction of updated locators based on the current webpage structure.</p>
 <p class="has-line-data" data-line-start="2" data-line-end="4">Installation<br>
@@ -8,7 +8,7 @@ pip install chromedriver-autoinstaller<br>
 pip install flask<br>
 pip install selenium</p>
 <p class="has-line-data" data-line-start="10" data-line-end="12">Clone the Repository:<br>
-git clone <a href="https://github.com/your-username/self-healing-automation.git">https://github.com/your-username/self-healing-automation.git</a></p>
+git clone <a href="https://github.com/Nitish1206/AI-driven-Selenium.git">https://github.com/Nitish1206/AI-driven-Selenium.git</a></p>
 <p class="has-line-data" data-line-start="13" data-line-end="17">cd webapp<br>
 Run the Script:<br>
 Execute the flask_app.py script<br>
